@@ -22,7 +22,10 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    mlock(buf, bytes);
+    if(mlock(buf, bytes) == -1)
+    {
+        perror("mlock");
+    }
 
     // write a pattern and read it back
     unsigned char* curr = buf;
