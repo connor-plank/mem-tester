@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
     if(argc != 2)
     {
-        printf("First argument needs to be memory test size in bytes");
+        printf("First argument needs to be memory test size in bytes\n");
         return 1;
     }
 
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
         if((*curr) != 0xAA)
         {
             printf("mismatch at byte %zud\n", (size_t) curr);
-            printf("go get memory address from /proc/self/pagemap and then ctrl+c to kill this process");
+            printf("go get memory address from /proc/self/pagemap and then ctrl+c to kill this process\n");
             while(1);
         }
         curr++;
